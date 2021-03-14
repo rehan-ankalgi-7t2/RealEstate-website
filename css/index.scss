@@ -1,0 +1,840 @@
+// @import '/css/smoothscroll';
+
+$primary: #1a2330;
+$secondary: #C2A566;
+
+body,html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    transition: all 0.4s ease-out;
+}
+
+.smooth-scroll-wrapper {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.menu {
+    position: absolute;
+    height: 640px;
+    width: 640px;
+    background: $secondary;
+    z-index: 3;
+    right: -640px;
+    padding: 40px 40px;
+    box-sizing: border-box;
+    transition: all 0.4s ease-out;
+
+    ul {
+        display: block;
+        width: 60%;
+        list-style: none;
+        margin-top: 40px;
+
+        li, a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        a::after {
+            position: absolute;
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: white;
+            bottom: 0;
+            left: 0;
+            background-origin: center center;
+            transition: all 0.3s ease-out;
+        }
+
+        li:hover a::after {
+            width: 0%;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 64px;
+        top: 64px;
+        height: 64px;
+        width: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu-brand {
+        font-family: 'Cinzel decorative', 'Playfair Display', serif;
+        font-size: 32px;
+        color: $primary;
+        position: absolute;
+        left: 80px;
+        bottom: 40px;
+    }
+}
+
+.navbar {
+    height: 80px;
+    width: 100vw;
+    background-color: $primary;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &__brand {
+        height: 40px;
+        width: fit-content;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            height: 40px;
+        }
+
+        span {
+            color: $secondary;
+            font-family: 'Cinzel Decorative', 'playfair display', serif;
+            font-size: 24px;
+            margin-left: 8px;
+        }
+    }//brand
+
+}//navbar
+
+.hero {
+    position: relative;
+    height: 560px;
+    width: 100vw;
+    background: url(/Assets/Images/Hero-img@2x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 150px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &__typography {
+        height: 400px;
+        background-color: transparent;
+        width: 560px;
+        margin-top: -40px;
+
+        h1{
+            font-size: 56px;
+            font-weight: lighter;
+            font-family: 'Limelight', 'Cinzel Decorative', 'playfair display', serif;
+            color: white;
+        }
+
+        p{
+            color: white;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            margin-bottom: 64px;
+            line-height: calc( 16px * 1.5 );
+        }
+
+        button{
+            height: 56px;
+            width: 240px;
+            background-color: $secondary;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: white;
+            border: none;
+            box-shadow: 0px 4px 8px rgba($color: #000000, $alpha: 0.4);
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                margin-left: 8px;
+                transition: all 0.3s ease-out;
+            }
+
+            &:hover svg {
+                transform: translateX(16px);
+            }
+        }
+    }
+
+    .scroll__btn {
+        height: 64px;
+        width: 64px;
+        background-color: $secondary;
+        border: none;
+        position: absolute;
+        bottom: -32px;
+        right: calc(320px + 40px);
+    }
+}// main hero section
+
+.service {
+    margin: 80px 75px 0px 75px;
+
+    h2{
+        font-weight: 400;
+        color: #000000;
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+    }
+
+    &__card--container {
+        margin-top: 64px;
+        width: 100%;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .service__card {
+            height: 160px;
+            width: 200px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-around;
+
+            .service__card--text {
+                font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                color: black;
+            }
+        }
+    }
+}//services section
+
+.about {
+    margin: 80px 0px 0px 0px;
+
+    &__typography {
+        margin: 80px 75px 0px 75px;
+        h2{
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            color: black;
+        }
+
+        p{
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: rgba($color: #000000, $alpha: 0.8);
+        }
+    }
+
+    &__video {
+        margin: 64px 0px 0px 0px;
+        position: relative;
+
+        .about__video--thumbnail{
+            background: url(/Assets/Images/Video-thumbnail@2x.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .play__btn {
+            // position: absolute;
+            background: transparent;
+            height: 80px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border:  none;
+        }
+        }
+    }
+}// about section
+
+.property {
+    margin: 80px 75px 0px 75px;
+
+    h2{
+        font-family: 'Poppins', sans-serif;
+        font-size: 48px;
+        color: black;
+        font-weight: 400;
+    }
+
+    &__card--container {
+        margin-top: -80px;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .property__card--col1 {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
+            height: fit-content;
+
+            #property__card--1 {
+
+                svg{
+                    transition: all 0.4s ease-out;
+                    margin-top: 16px;
+                }
+
+                &:hover svg {
+                    transform: translateX(40px);
+                }
+                .property__card--img {
+                    background: url(/Assets/Images/PropertyOne@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 709px;
+                    width: 560px;
+                    margin: 0 0 40px 0;
+                }
+
+                .property__card--typography {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    width: 560px;
+                    margin-bottom: 40px;
+
+                    h3{
+                        font-size: 40px;
+                        font-weight: 400;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        line-height: calc( 14px * 1.5 );
+                    }
+                }
+            }
+
+            #property__card--3 {
+
+                svg{
+                    transition: all 0.4s ease-out;
+                    margin-top: 16px;
+                }
+
+                &:hover svg {
+                    transform: translateX(40px);
+                }
+                .property__card--img {
+                    background: url(/Assets/Images/PropertyThree@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 709px;
+                    width: 560px;
+                    margin: 0 0 40px 0;
+                }
+
+                .property__card--typography {
+                     font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    width: 560px;
+                    margin-bottom: 40px;
+
+                    h3{
+                        font-size: 40px;
+                        font-weight: 400;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        line-height: calc( 14px * 1.5 );
+                    }
+                }
+            }
+
+            #property__card--5 {
+
+                svg{
+                    transition: all 0.4s ease-out;
+                    margin-top: 16px;
+                }
+
+                &:hover svg {
+                    transform: translateX(40px);
+                }
+                .property__card--img {
+                    background: url(/Assets/Images/PropertyFive@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 709px;
+                    width: 560px;
+                    margin: 0 0 40px 0;
+                }
+
+                .property__card--typography {
+                     font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    width: 560px;
+                    margin-bottom: 40px;
+
+                    h3{
+                        font-size: 40px;
+                        font-weight: 400;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        line-height: calc( 14px * 1.5 );
+                    }
+                }
+            }
+        }
+
+        .property__card--col2 {
+            margin-top: 240px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: space-between;
+            height: fit-content;
+
+            #property__card--2 {
+
+                svg{
+                    transition: all 0.4s ease-out;
+                    margin-top: 16px;
+                }
+
+                &:hover svg {
+                    transform: translateX(40px);
+                }
+                .property__card--img {
+                    background: url(/Assets/Images/PropertyTwo@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 709px;
+                    width: 560px;
+                    margin: 0 0 40px 0;
+                }
+
+                .property__card--typography {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    width: 560px;
+                    margin-bottom: 40px;
+
+                    h3{
+                        font-size: 40px;
+                        font-weight: 400;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        line-height: calc( 14px * 1.5 );
+                    }
+                }
+            }
+
+            #property__card--4 {
+
+                svg{
+                    transition: all 0.4s ease-out;
+                    margin-top: 16px;
+                }
+
+                &:hover svg {
+                    transform: translateX(40px);
+                }
+                .property__card--img {
+                    background: url(/Assets/Images/PropertyFour@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 709px;
+                    width: 560px;
+                    margin: 0 0 40px 0;
+                }
+
+                .property__card--typography {
+                     font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    width: 560px;
+                    margin-bottom: 40px;
+
+                    h3{
+                        font-size: 40px;
+                        font-weight: 400;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        line-height: calc( 14px * 1.5 );
+                    }
+                }
+            }
+
+            #property__card--6 {
+
+                svg{
+                    transition: all 0.4s ease-out;
+                    margin-top: 16px;
+                }
+
+                &:hover svg {
+                    transform: translateX(40px);
+                }
+                .property__card--img {
+                    background: url(/Assets/Images/PropertySix@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    height: 709px;
+                    width: 560px;
+                    margin: 0 0 40px 0;
+                }
+
+                .property__card--typography {
+                     font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    width: 560px;
+                    margin-bottom: 40px;
+
+                    h3{
+                        font-size: 40px;
+                        font-weight: 400;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        line-height: calc( 14px * 1.5 );
+                    }
+                }
+            }
+        }//property__card--col2
+    }//property__card--container
+}//property section
+
+.explore__btn {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 120px 0;
+    text-decoration: none;
+
+    h1 {
+        text-align: center;
+        color: black;
+        font-weight: 400;
+        font-size: 48px;
+        border: none;
+        text-decoration: none;
+        padding: 0px 0px 8px 0px;
+        font-family: 'Poppins', sans-serif;
+        background-origin: center;
+        transition: all 0.4s ease-out;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background-origin: center;
+            transition: all 0.4s ease-out;
+            background-color: $secondary;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.explore__btn:hover h1::after {
+    width: 0%;
+}
+
+.contact__container{
+    margin: 120px 75px 64px 75px;
+
+    h2{
+        font-size: 48px;
+        font-weight: 400;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        margin: 16px 0px;
+    }
+
+    #h2__p{
+        font-size: 18px;
+        font-weight: 400;
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        margin: 0px 0px 48px 0px;
+    }
+    .contact {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .contact__form{
+
+            form{
+                margin: 0px 0px 64px 0px ;
+                height: fit-content;
+                display: flex;
+                flex-flow: column;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                    input {
+                        height: 64px;
+                        font-size: 24px;
+                        font-family: 'Poppins', sans-serif;
+                        color: black;
+                        font-weight: 400;
+                        width: 560px;
+                        padding: 8px 16px;
+                        box-sizing: border-box;
+                        position: inherit;
+                        border: none;
+                        border-bottom: 2px solid $secondary;
+                        margin: 0px 0px 48px 0px;
+
+                        &:focus {
+                            border: none;
+                            outline: none;
+                        }
+                    }
+                }
+
+                button {
+                    padding: 16px 40px;
+                    background-color: $primary;
+                    color: $secondary;
+                    font-family: 'Poppins', sans-serif;
+                    border: none;
+                    font-size: 16px;
+                    margin-top: 32px;
+                }
+            }
+
+        .contact__info {
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 560px;
+            margin: 0px 0px 0px 0px;
+            .address {
+                h3 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-size: 24px;
+                    color: black;
+                    margin: 16px 0;
+                }
+
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: rgba($color: #000000, $alpha: 0.8);
+                }
+            }
+
+            .contact__no {
+                h3 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-size: 24px;
+                    color: black;
+                    margin: 16px 0;
+                }
+
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: rgba($color: #000000, $alpha: 0.8);
+                }
+            }
+
+            .email__id {
+                h3 {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-size: 24px;
+                    color: black;
+                    margin: 16px 0;
+                }
+
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: rgba($color: #000000, $alpha: 0.8);
+                }
+            }
+        }
+    }
+}
+
+.club {
+
+    .club__typography {
+        margin: 0px 75px 48px 75px;
+
+        h2{
+            font-size: 48px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: black;
+        }
+
+        p{
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: rgba($color: #000000, $alpha: 0.8);
+            width: 640px;
+        }
+    }
+
+    .club__overview{
+        &--typography{
+            margin: 0px 75px 0px 75px;
+
+            h4{
+                font-size: 32px;
+                font-weight: 400;
+                font-family: 'Poppins', sans-serif;
+                color: rgba($color: #000000, $alpha: 1);
+            }
+        }
+
+        &--video {
+            background: url(/Assets/Images/Club-img@2x.png) no-repeat;
+            background-size: cover;
+            height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                background: transparent;
+                height: 80px;
+                width: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border:  none;
+            }    
+        }
+    }
+}
+
+.footer {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+
+    .footer__brand {
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: $secondary;
+        }
+    }
+}//footer section
+
+.club__slider {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: white;
+    background-color: $secondary;
+    width: 100%;
+    height: 48vw;
+    overflow: hidden;
+
+    .slider__container {
+        margin: 80px 75px 80px 75px;
+
+        .block {
+            position: relative;
+            width: 800px;
+            height: 480px;
+            margin: 10px 300px 20px 0px;
+
+            h1 {
+                position: absolute;
+                font-family: 'Limelight', 'Poppins', sans-serif;
+                font-size: 40px;
+                font-weight: lighter;
+                // letter-spacing: 4px;
+            }
+        }
+
+        .block-1{
+            background: url(/Assets/Images/andrew-neel-jtsW--Z6bFw-unsplash.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+
+
+        .block-2{
+            background: url(/Assets/Images/emre-CBh4D3l0EwM-unsplash.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+
+        .block-3{
+            background: url(/Assets/Images/nadine-shaabana-U_z9Y0rEIJc-unsplash.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+
+        .block-4{
+            background: url(/Assets/Images/thanos-pal-vb-hPUzfpBo-unsplash.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+
+        .block-5{
+            background: url(/Assets/Images/vladimir-malyutin-6A_hN1SFjRI-unsplash.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+
+        .block:nth-child(even) h1 {
+            right: -60px;
+        }
+
+        .block:nth-child(odd) h1 {
+            bottom: 60px;
+            right: -60px;
+        }
+    }
+}

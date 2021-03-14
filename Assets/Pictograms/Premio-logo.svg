@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #c2a566;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #1a2330;
+      }
+    </style>
+  </defs>
+  <g id="Premio-logo" transform="translate(-477.837 -306.837)">
+    <path id="Polygon_1" data-name="Polygon 1" class="cls-1" d="M33.05,0l6.184,7.506L46.74,13.69,45.8,23.37l.935,9.68-7.506,6.184L33.05,46.74,23.37,45.8l-9.68.935L7.506,39.234,0,33.05l.935-9.68L0,13.69,7.506,7.506,13.69,0l9.68.935Z" transform="translate(482.467 312.286)"/>
+    <path id="Polygon_2" data-name="Polygon 2" class="cls-1" d="M23.51,0l4.4,5.339,5.339,4.4-.665,6.886.665,6.886-5.339,4.4-4.4,5.339-6.886-.665-6.886.665-4.4-5.339L0,23.51l.665-6.886L0,9.738l5.339-4.4L9.738,0l6.886.665Z" transform="translate(489.213 319.032)"/>
+    <path id="Polygon_3" data-name="Polygon 3" class="cls-1" d="M14.787,0l2.767,3.358,3.358,2.767-.418,4.331.418,4.331-3.358,2.767-2.767,3.358-4.331-.418-4.331.418L3.358,17.554,0,14.787l.418-4.331L0,6.125,3.358,3.358,6.125,0l4.331.418Z" transform="translate(495.38 325.199)"/>
+    <path id="Polygon_4" data-name="Polygon 4" class="cls-2" d="M28,0l5.6,22.4L56,28,33.6,33.6,28,56,22.4,33.6,0,28l22.4-5.6Z" transform="translate(477.837 306.837)"/>
+  </g>
+</svg>
